@@ -496,7 +496,7 @@ class AI (commands .Cog ):
                 return "Gemini API key not configured. Please set the GOOGLE_API_KEY environment variable."
 
             genai .configure (api_key =self .gemini_api_key )
-            model =genai .GenerativeModel ("gemini-1.5-flash")
+            model =genai .GenerativeModel ("gemini-1.5-pro")
             chat =model .start_chat (history =history )
             response =await asyncio .to_thread (chat .send_message ,message )
             return response .text .strip ()
@@ -692,7 +692,7 @@ Support server: https://discord.gg/JxCFmz9nZP"""
                 )
 
             genai .configure (api_key =self .gemini_api_key )
-            model =genai .GenerativeModel ('gemini-1.5-flash')
+            model =genai .GenerativeModel ('gemini-1.5-pro')
 
             async with aiohttp .ClientSession ()as session :
                 async with session .get (image_url )as resp :
@@ -738,11 +738,11 @@ Support server: https://discord.gg/JxCFmz9nZP"""
         """Generate code using AI"""
         await ctx .defer ()
 
-        prompt =f"Generate clean, working {language} code for: {description}. Only provide the code with minimal comments."
+        prompt =f"Generate clean, working {language} code for: {description}. Only provide the code with minimal comments. Return only the code without explanations."
 
         try :
-            history =[{"role":"user","parts":[{"text":prompt }]}]
-            code =await self ._get_gemini_response (prompt ,history )
+            history =[{"role":"user","content":prompt }]
+            code =await self ._get_groq_response (prompt ,history )
 
 
             formatted_code =f"```{language.lower()}\n{code}\n```"
@@ -817,8 +817,8 @@ Support server: https://discord.gg/JxCFmz9nZP"""
         prompt =f"Explain {topic} {level_instruction}. Make it clear and informative."
 
         try :
-            history =[{"role":"user","parts":[{"text":prompt }]}]
-            explanation =await self ._get_gemini_response (prompt ,history )
+            history =[{"role":"user","content":prompt }]
+            explanation =await self ._get_groq_response (prompt ,history )
 
             embed =discord .Embed (
             title =f"📚 Explanation: {topic}",
@@ -1426,7 +1426,7 @@ Support server: https://discord.gg/JxCFmz9nZP"""
                 )
 
             genai .configure (api_key =self .gemini_api_key )
-            model =genai .GenerativeModel ('gemini-1.5-flash')
+            model =genai .GenerativeModel ('gemini-1.5-pro')
 
             async with aiohttp .ClientSession ()as session :
                 async with session .get (image_url )as resp :
