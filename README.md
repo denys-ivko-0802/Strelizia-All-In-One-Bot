@@ -110,27 +110,6 @@ BOT_PREFIX=!
 
 ---
 
-### 🏛️ Original Olympus Project
-
-**🛡️ Olympus Bot License Agreement**
-
-Based on the original Olympus Bot by Olympus Development.  
-**Original Repository:** [olympus-bot](https://github.com/sonujana26/olympus-bot)  
-**Discord Server:** [discord.gg/odx](https://discord.gg/odx) (Olympus Server)
-
-*Original Olympus Bot © 2025 Olympus Development — All rights reserved.*
-
-**License Terms:**
-- Commercial Use: ❌ Not allowed without paid license from Olympus Team
-- Redistribution: ❌ Forbidden. Do not host this code elsewhere  
-- Modification: ❌ Not allowed unless licensed
-- Patents/Derivatives: ❌ No rights to publish forks under any name
-
-For licensing inquiries: https://discord.gg/odx
-
----
-
-**Made with ❤️ by [AeroX Development](https://discord.gg/aeroxdev)**
 
 *Based on Olympus • Powered by Python & Discord.py*
 
