@@ -101,12 +101,6 @@ BOT_PREFIX=!
 
 <div align="center">
 
-### 👨‍💻 Development Team
-
-**Developer:** Aegis  
-**Discord:** `root.exe`  
-**Community:** AeroX Development  
-**Discord Server:** [discord.gg/meet](https://discord.gg/meet)
 
 ---
 
